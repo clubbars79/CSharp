@@ -1,0 +1,12 @@
+﻿double y = -1;
+double alpha = 0;
+Console.WriteLine("Введите коэффициенты b1, k1 1-го уравнения примой Y=K1X+B1 через запятую ");
+int[] line1 = Console.ReadLine().Split(",").Select(int.Parse).ToArray();
+Console.WriteLine("Введите коэффициенты b2, k2 2-го уравнения примой Y=K2X+B2 через запятую ");
+int[] line2 = Console.ReadLine().Split(",").Select(int.Parse).ToArray();
+line1[0] = line1[0] * -1;
+line2[0] = line2[0] * -1;
+alpha = line1[1] * y - y * line2[1];
+double pointX = (line1[0] * y - y * line2[0]) / alpha;
+double pointY = (line1[1] * line2[0] - line1[0] * line2[1]) / alpha;
+Console.WriteLine("(" + pointX + ";" + pointY + ")");
