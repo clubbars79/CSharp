@@ -28,6 +28,7 @@ void PrintArray(int[,] array)
             if (i < array.GetLength(0))
             {
                 Console.Write(", ");
+                
             }
         }
         Console.WriteLine("]");

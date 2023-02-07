@@ -34,23 +34,14 @@ void PrintArry(int[,] array)
 }
 int[,] array = CreateArry(5, 5);
 PrintArry(array);
-if (array.GetLength(0) < position[0])
+int i = 0;
+for (i = 0; i < 2; i++)
 {
-    Console.WriteLine("Такого числа в массиве нет");
+    if (position[i] > array.GetLength(0) || position[i] < 0)
+    {
+        Console.WriteLine("Такого числа в массиве нет");
+        break;
+    }
+
 }
-else if (array.GetLength(0) < position[0])
-{
-    Console.WriteLine("Такого числа в массиве нет");
-}
-else if (array.GetLength(1) < position[1])
-{
-    Console.WriteLine("Такого числа в массиве нет");
-}
-else if (array.GetLength(1) < position[1])
-{
-    Console.WriteLine("Такого числа в массиве нет");
-}
-else
-{
-    Console.WriteLine("Позиции числа в массиве: [" + position[0] + "," + position[1] + "] число = " + array[position[0], position[1]]);
-}
+Console.WriteLine("Позиции числа в массиве: [" + position[0] + "," + position[1] + "] число = " + array[position[0], position[1]]);

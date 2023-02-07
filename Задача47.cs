@@ -3,7 +3,7 @@ int line = int.Parse(Console.ReadLine());
 Console.Write("Введите количество столбцов массива : ");
 int columns = int.Parse(Console.ReadLine());
 
-double[,] CreateArry(int line, int columns)
+double[,] CreateArray(int line, int columns)
 {
     double[,] array = new double[line, columns];
     Random rand = new Random();
@@ -11,13 +11,13 @@ double[,] CreateArry(int line, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            array[i, j] = rand.NextDouble() * 20 - 10;
+            array[i, j] = rand.NextDouble() * 20 - 10; // магию ни кто не запрещал
         }
     }
     return array;
 }
 
-void PrintArry(double[,] array)
+void PrintArray(double[,] array)
 {
 
     for (int i = 0; i < line; i++)
@@ -25,15 +25,15 @@ void PrintArry(double[,] array)
         Console.Write("[");
         for (int j = 0; j < columns; j++)
         {
-            Console.Write(array[i, j] - array[i, j] % 0.01);
+            Console.Write(array[i, j]); //Conaole.Write("{array[i,j]:f3}") - не помогла, все вчто в "" выводит text. Пусть будут такие, в условие не сказано, какие!
             if (i < line)
             {
-                Console.Write(", ");
+                Console.Write(" "); // Пусть не будут запятых!!!, - опять магию использовал, сорри
             }
         }
         Console.WriteLine("]");
     }
 
 }
-double[,] array = CreateArry(line, columns);
-PrintArry(array);
+double[,] array = CreateArray(line, columns);
+PrintArray(array);
